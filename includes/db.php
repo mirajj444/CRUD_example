@@ -1,7 +1,14 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "crud_example");
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "crud_example";
 
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
 if ($conn->connect_error) {
-    die("Conexiune eșuată: " . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
 ?>
