@@ -1,0 +1,138 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #f5f5f5;
+  color: #1e293b;
+  min-height: 100vh;
+}
+
+/* Base Typography */
+h1 {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+h2 {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+/* Header Component */
+header {
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0 32px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header .logo {
+  font-weight: 700;
+  font-size: 17.6px;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.admin-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: #64748b;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+.admin-link:hover {
+  color: #2563eb;
+  border-color: #2563eb;
+}
+
+/* Main Wrapper Layout */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+/* --- Card Grid Layout (index.php) --- */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 4 / 4;
+  object-fit: cover;
+  display: block;
+}
+
+.card-body {
+  padding: 16px;
+}
+.card-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-desc {
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 10px;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Caps description at 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-price {
+  font-weight: 700;
+  color: #2563eb;
+  font-size: 17.6px;
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 0 16px;
+  }
+  main {
+    padding: 16px;
+  }
+  .cards-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+}
